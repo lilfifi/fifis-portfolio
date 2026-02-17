@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faith Musili · e‑portfolio</title>
+    <!-- Font Awesome 5 (clean icons) -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f7fa;  /* neutral cool background */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: #1e1e2f;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* main card – light, minimal, with subtle purple details */
+        .portfolio {
+            max-width: 1200px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 40px -10px rgba(30, 30, 47, 0.08), 0 8px 20px rgba(120, 80, 160, 0.05);
+            padding: 2.5rem 2.2rem;
+            border: 1px solid #f0eaff;
+        }
+
+        /* purple accents – used sparingly for a professional touch */
+        .accent-purple {
+            color: #5f4b8b;      /* sophisticated muted purple */
+        }
+        .border-purple {
+            border-color: #d9c9ff;
+        }
+        .bg-soft-purple {
+            background: #f6f2ff;
+        }
+
+        /* headings */
+        h1, h2, h3 {
+            font-weight: 500;
+            color: #25243b;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            margin: 2.5rem 0 1.8rem 0;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 2px solid #e6ddf5;
+            padding-bottom: 0.65rem;
+        }
+
+        h2 i {
+            color: #6c5a9c;
+            font-size: 2rem;
+        }
+
+        /* ----- HOME SECTION (professional layout) ----- */
+        .home-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            align-items: center;
+            background: #fbfaff;
+            border-radius: 2rem;
+            padding: 2rem 2.2rem;
+            border: 1px solid #ede7fc;
+        }
+
+        /* image – modern, clean */
+        .home-image {
+            flex: 0 0 170px;
+        }
+
+        .home-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 30% 70% 40% 60% / 50% 40% 60% 50%;
+            box-shadow: 0 12px 24px -8px #b19fdb;
+            border: 3px solid white;
+            background: #e4d9fc;
+            transition: 0.2s ease;
+        }
+
+        /* about me block (name, contacts) */
+        .about-professional {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .name-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #26243b;
+            line-height: 1.1;
+            margin-bottom: 0.2rem;
+            letter-spacing: -0.03em;
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            color: #5d5470;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            border-left: 4px solid #8a75c4;
+            padding-left: 1rem;
+            background: #f2ecfe;
+            border-radius: 0 2rem 2rem 0;
+            width: fit-content;
+            padding: 0.4rem 1.5rem 0.4rem 1rem;
+        }
+
+        /* contact strip – minimal, professional */
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin: 1.8rem 0 1rem;
+        }
+
+        .contact-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: white;
+            padding: 0.6rem 1.3rem;
+            border-radius: 100px;
+            border: 1px solid #dcd0f0;
+            font-size: 0.95rem;
+            color: #2f2b4a;
+            font-weight: 500;
+            box-shadow: 0 2px 6px #e1d7f5;
+            transition: all 0.1s;
+        }
+
+        .contact-chip i {
+            color: #5f4b8b;
+            font-size: 1.1rem;
+            width: 1.4rem;
+        }
+
+        .contact-chip a {
+            color: #2f2b4a;
+            text-decoration: none;
+        }
+
+        .contact-chip a:hover {
+            color: #5f4b8b;
+            text-decoration: underline;
+        }
+
+        /* MESSAGE FORM – clean, professional */
+        .message-section {
+            margin-top: 2rem;
+            background: #fbfaff;
+            border-radius: 1.5rem;
+            padding: 1.5rem 1.8rem;
+            border: 1px solid #e6dcf5;
+        }
+
+        .message-section h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #3b3552;
+            margin-bottom: 1.2rem;
+        }
+
+        .message-section h3 i {
+            color: #7a67b1;
+        }
+
+        .form-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        .form-field {
+            flex: 1 1 200px;
+        }
+
+        .form-field label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: #5f4b8b;
+            margin-bottom: 0.25rem;
+        }
+
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border: 1.5px solid #e1d6f0;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            background: white;
+            transition: 0.15s;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-field input:focus,
+        .form-field textarea:focus {
+            border-color: #8a75c4;
+            box-shadow: 0 0 0 3px #e3d8fc;
+        }
+
+        .form-field textarea {
+            min-height: 85px;
+            resize: vertical;
+        }
+
+        .send-action {
+            display: flex;
+            align-items: flex-end;
+            flex: 0 0 auto;
+        }
+
+        .btn-primary {
+            background: #5f4b8b;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.8rem 2.2rem;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1px solid #9c87ce;
+            cursor: pointer;
+            transition: 0.15s;
+            box-shadow: 0 6px 14px #cdbaf1;
+            letter-spacing: 0.2px;
+            height: fit-content;
+        }
+
+        .btn-primary:hover {
+            background: #4d3b73;
+            box-shadow: 0 8px 18px #b7a2e0;
+            transform: translateY(-2px);
+        }
+
+        /* feedback toast */
+        .form-feedback {
+            margin-top: 1.2rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 60px;
+            background: #f0eaff;
+            color: #3f3160;
+            font-weight: 500;
+            display: inline-block;
+            border: 1px solid #b6a2de;
+            font-size: 0.95rem;
+        }
+
+        /* SERVICES – clean lists, professional cards */
+        .services-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .service-item {
+            background: #fcfaff;
+            border-radius: 1.8rem;
+            padding: 2rem 1.8rem;
+            border: 1px solid #e6dcf0;
+            transition: 0.2s;
+            box-shadow: 0 6px 14px #f0e9fc;
+        }
+
+        .service-item:hover {
+            border-color: #c7b4eb;
+            box-shadow: 0 16px 24px -8px #d7c6f0;
+        }
+
+        .service-icon {
+            font-size: 2.4rem;
+            color: #5f4b8b;
+            margin-bottom: 1rem;
+        }
+
+        .service-item h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #32304a;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #e3d6fc;
+            padding-bottom: 0.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 0.5rem 0 0.3rem 1.8rem;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="%236853a8"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') left center no-repeat;
+            background-size: 1.2rem;
+            color: #3c3852;
+            border-bottom: 1px solid #f0e6ff;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #6f6590;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2d9f2;
+            padding-top: 1.5rem;
+        }
+
+        /* responsive */
+        @media (max-width: 600px) {
+            .portfolio { padding: 1.5rem; }
+            .home-grid { padding: 1.2rem; }
+            .name-title h1 { font-size: 2.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio">
+        <!-- HOME section (image, name, contacts, message form) -->
+        <section>
+            <div class="home-grid">
+                <!-- a) profile image -->
+                <div class="home-image">
+                    <img src= "Your-image.jpeg">
+                </div>
+
+                <!-- b) about me: name + contacts (email, phone) -->
+                <div class="about-professional">
+                    <div class="name-title">
+                        <h1>Faith Musili</h1>
+                        <div class="subhead">Lead full-stack developer</div>
+                    </div>
+
+                    <!-- ii) contacts: email & phone & message hint (extra item optional) -->
+                    <div class="contact-row">
+                        <span class="contact-chip"><i class="fas fa-envelope"></i> <a href="mailto:a.rivera@prof.dev">fifiymirmia@gmail.com</a></span>
+                        <span class="contact-chip"><i class="fas fa-phone-alt"></i> <a href="tel:+12125558900">+254794399802</a></span>
+                        <span class="contact-chip"><i class="fas fa-comment"></i> available for freelance</span>
+                    </div>
+
+                    <!-- MESSAGE FORM (embedded) -->
+                    <div class="message-section" id="contactForm">
+                        <h3><i class="fas fa-paper-plane"></i> send a direct message</h3>
+                        <div class="form-layout">
+                            <div class="form-field">
+                                <label>Name</label>
+                                <input type="text" id="proName" placeholder="Jeremy Mbachu" value="">
+                            </div>
+                            <div class="form-field">
+                                <label>Email</label>
+                                <input type="email" id="proEmail" placeholder="hello@domain.com">
+                            </div>
+                            <div class="form-field" style="flex:2 1 300px;">
+                                <label>Message</label>
+                                <textarea id="proMsg" placeholder="I'd like to discuss a project..."></textarea>
+                            </div>
+                            <div class="send-action">
+                                <button class="btn-primary" id="proSendBtn"><i class="fas fa-feather-alt"></i> send</button>
+                            </div>
+                        </div>
+                        <!-- feedback element -->
+                        <div id="proFeedback" style="margin-top:1rem; min-height:2.5rem;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES section (using lists) -->
+        <section>
+            <h2><i class="fas fa-code-branch"></i> specialities & services</h2>
+            <div class="services-showcase">
+                <!-- Web development (main) -->
+                <div class="service-item">
+                    <div class="service-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Web development</h3>
+                    <ul class="service-list">
+                        <li>frontend architecture (React, Vue)</li>
+                        <li>backend APIs (Node.js, Python)</li>
+                        <li>headless CMS & e‑commerce</li>
+                        <li>performance & SEO optimization</li>
+                    </ul>
+                </div>
+                <!-- additional services with lists -->
+                <div class="service-item">
+                    <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h3>UI/UX consulting</h3>
+                    <ul class="service-list">
+                        <li>user research & wireframing</li>
+                        <li>interactive prototyping</li>
+                        <li>design system documentation</li>
+                        <li>accessibility audits (WCAG)</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>cloud & devops</h3>
+                    <ul class="service-list">
+                        <li>AWS / Vercel / Netlify</li>
+                        <li>CI/CD pipelines</li>
+                        <li>serverless functions</li>
+                        <li>monitoring & analytics</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>tech leadership</h3>
+                    <ul class="service-list">
+                        <li>code reviews & mentoring</li>
+                        <li>technical strategy</li>
+                        <li>agile transformation</li>
+                        <li>legacy modernization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <span>© 2026 Faith Musili – e‑portfolio · </span>
+        </footer>
+    </div>
+
+    <!-- JavaScript: handle message form (professional feedback) -->
+    <script>
+        (function() {
+            const btn = document.getElementById('proSendBtn');
+            const nameInp = document.getElementById('proName');
+            const emailInp = document.getElementById('proEmail');
+            const msgInp = document.getElementById('proMsg');
+            const feedbackDiv = document.getElementById('proFeedback');
+
+            function setFeedback(message, isSuccess = true) {
+                feedbackDiv.innerHTML = `<div class="form-feedback" style="background: ${isSuccess ? '#e9dffa' : '#ffe6f0'}; border-color: ${isSuccess ? '#b09cd9' : '#d9a8b9'}; color: ${isSuccess ? '#332d4a' : '#74103b'};">${message}</div>`;
+                // auto hide after 4 sec
+                setTimeout(() => {
+                    feedbackDiv.innerHTML = '';
+                }, 4500);
+            }
+
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const name = nameInp.value.trim();
+                const email = emailInp.value.trim();
+                const message = msgInp.value.trim();
+
+                if (!name || !email || !message) {
+                    setFeedback('⚠️ All fields are required. Please complete the form.', false);
+                    return;
+                }
+
+                // quick email validation
+                if (!email.includes('@') || !email.includes('.')) {
+                    setFeedback('📧 Please provide a valid email address.', false);
+                    return;
+                }
+
+                // professional success message
+                setFeedback(`✓ Thanks, ${name}. Your message has been delivered (demo). I’ll reply within 24h.`, true);
+
+                // (optional) clear fields after short delay to simulate sent – but keep for demo
+                // you can reset if you prefer, but not required
+                // nameInp.value = ''; emailInp.value = ''; msgInp.value = '';
+            });
+
+            // allow "enter" in fields to trigger send (but not on textarea newline)
+            [nameInp, emailInp].forEach(field => {
+                field.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        btn.click();
+                    }
+                });
+            });
+            msgInp.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && e.ctrlKey) {  // Ctrl+Enter to send (nice professional touch)
+                    e.preventDefault();
+                    btn.click();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
